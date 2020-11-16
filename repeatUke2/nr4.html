@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="loadPage()">
+    <div id="a"></div>
+    <div id="b"></div>
+    <script>
+        document.getElementById('b').innerHTML = 'under lasting:' + new Date().toTimeString();
+
+        function loadPage() {
+            document.getElementById('a').innerHTML = 'etter lasting:' + new Date().toTimeString();
+        }
+    </script>
+</body>
+</html>

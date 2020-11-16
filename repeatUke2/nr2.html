@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <table>
+        <tr>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+        </tr>
+        <tr>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+        </tr>
+        <tr>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+        </tr>
+        <tr>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+            <td onmouseover="doSomething(this)" onmouseout="doSomething1(this)">O</td>
+        </tr>
+    </table>
+    <script>
+        function doSomething(navnDuVelger) {
+            navnDuVelger.innerHTML = 'X';
+        }
+
+        function doSomething1(navnDuVelger1) {
+            navnDuVelger1.innerHTML = 'O'
+        }
+    </script>
+</body>
+
+</html>

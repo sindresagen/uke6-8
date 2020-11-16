@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <table>
+        <tr>
+            <button id="1" onclick="selectBtn(this)">1</button>
+            <button id="2" onclick="selectBtn(this)">2</button>
+            <button id="3" onclick="selectBtn(this)">3</button>
+        </tr>
+        <br/>
+        <tr>
+            <button id="4" onclick="selectBtn(this)">4</button>
+            <button id="5" onclick="selectBtn(this)">5</button>
+            <button id="6" onclick="selectBtn(this)">6</button>
+        </tr>
+        <br/>
+        <tr>
+            <button id="7" onclick="selectBtn(this)">7</button>
+            <button id="8" onclick="selectBtn(this)">8</button>
+            <button id="9" onclick="selectBtn(this)">9</button>
+        </tr>
+    </table>
+    
+    <script>
+        let appDiv = document.getElementById('app');
+        let rightCode = 3812;
+        let wrongCode;
+
+        show();
+        function show();
+        let openLock = rightCode == 0 ? '' : 'Open';
+        appDiv.innerHTML = `      
+        <div>${openLock}</div>
+        `;
+
+        let selectedBtn = '';
+        function selectBtn(clickBtn) {
+            selectBtn = clickBtn;
+            if (selectBtn.id == '1') {
+                appDiv.innerHTML= '<div>1</div>';
+            }
+        }
+    </script>
+</body>
+</html>

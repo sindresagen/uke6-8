@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <p style="font-size: xx-large">Hvor er jeg fra?</p>
+    <div id="1" style="font-size: large" onclick="doSomething(this)">Lillehammer</div> 
+    <div id="2" style="font-size: large" onclick="doSomething1(this)">Karasjok</div> 
+    <div id="3" style="font-size: large" onclick="doSomething2(this)">Moss</div> 
+    <script>
+        function doSomething(navnDuVelgerSelv) {
+            navnDuVelgerSelv.innerHTML = 'Født her ja!';
+        }
+        
+        function doSomething1(navnDuVelgerSelv1) {
+            navnDuVelgerSelv1.innerHTML = 'Nei fy faen';
+        }
+
+        function doSomething2(navnDuVelgerSelv2) {
+            navnDuVelgerSelv2.innerHTML = 'Oppvokst!';
+        }
+    </script>
+</body>
+</html>
