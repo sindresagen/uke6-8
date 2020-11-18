@@ -18,7 +18,66 @@
         const expected = true; 
         assert.equal(actual, expected);
         });
-        
+
+        QUnit.test("lengden er IKKE 10", function (assert) {
+        const actual = isLengthCorrect('20.5.2020');
+        const expected = false; 
+        assert.equal(actual, expected);
+        });
+
+        QUnit.test("det er ikke punktum i de rette posisjonene", function (assert) {
+        const actual = isDateValid('20.0.52020');
+        const expected = false; 
+        assert.equal(actual, expected);
+        });
+
+        QUnit.test("året består ikke av 4 siffer", function (assert) {
+        const actual = isYearCorrect('20021');
+        const expected = false; 
+        assert.equal(actual, expected);
+        });
+
+        QUnit.test("måned består ikke av 2 siffer", function (assert) {
+        const actual = isMonthCorrect('1');
+        const expected = false; 
+        assert.equal(actual, expected);
+        });
+
+        QUnit.test("måned er utenfor 1-12", function (assert) {
+        const actual = isMonthCorrect('13');
+        const expected = false; 
+        assert.equal(actual, expected);
+        });
+
+        QUnit.test("dag er større enn 31", function (assert) {
+        const actual = isDayCorrect('33');
+        const expected = false; 
+        assert.equal(actual, expected);
+        });
+
+        QUnit.test("dag er 31 for en måned som ikke har 31 dager", function (assert) {
+        const actual = isDayCorrect('31', '04', '2020');
+        const expected = false; 
+        assert.equal(actual, expected);
+        });
+
+        QUnit.test("dag er 30 og måned er feb", function (assert) {
+        const actual = isDayCorrect('30', '02', '2020');
+        const expected = false; 
+        assert.equal(actual, expected);
+        });
+
+        QUnit.test("dag er 29 og måned er februar men det er ikke skuddår", function (assert) {
+        const actual = isDateValid('29.02.2019');
+        const expected = false; 
+        assert.equal(actual, expected);
+        });
+
+        QUnit.test("en test som viser at 29.februar blir gyldig når det er skuddår", function (assert) {
+        const actual = isDayCorrect('29', '02', '2020');
+        const expected = true; 
+        assert.equal(actual, expected);
+        });
       </script>
 </body>
 </html>
