@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="TP5.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="TP5.js"></script>
 
 
@@ -21,22 +22,24 @@
         updateView();
         function updateView() {
             document.getElementById('app').innerHTML = `
-            
-            <h1>Morse Code Generator</h1>
+            <div id="overskrift">
+            <h1>Morse Code Generator</h1></div>
             <div class="input">
-            <input type="text" placeholder="Skriv navnet ditt med panna her.."></div>
-            <div class="output"></div>
+            <form class="w3-container">
+            <input id="tekstInput" type="text" class="w3-input w3-border w3-animate-input" style="width:30%" placeholder="Skriv noe her" onkeydown="if (event.code === 'Enter') txtToArray(this);"></div>
+            </form>
+            <br>
+            <div id="under">
+            <div class="output">${txtToMorse || ''}</div>
             <div class="controller"></div>
+            </div>
+            
             
             `;
 
-
-
-
-
-
         }
 
+        
 
 
 

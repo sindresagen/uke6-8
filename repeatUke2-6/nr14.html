@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        let selectedColor = '';
+        let foregroundColor = '';
+
+        show();
+        function show() {
+            document.getElementById('app').innerHTML = `
+            <br/>
+            <div>
+                <select name="color" id="color" onchange="changeColor(app,value)">
+                    <option id="blk" value="black">Black</option>
+                    <option id="dbl" value="darkblue">Dark blue</option>
+                    <option id="lgry" value="lightgray">Light gray</option>
+                    <option id="lgrn" value="lightgreen">Light green</option>
+                    <option id="lred" value="salmon">light red</option>
+                </select>
+            </div>
+            <div style="background-color: ${selectedColor}; color: ${foregroundColor}; width: 500px; height: 500px;">TEKST</div>
+            `;
+        }
+
+        function changeColor(id,colors) {
+            selectedColor = color;
+            if (selectedColor === 'black' || selectedColor === 'darkblue') {
+                foregroundColor = 'white';
+            } else {
+                foregroundColor = 'black';
+            }
+            show();
+        }
+    </script>
+</body>
+</html>

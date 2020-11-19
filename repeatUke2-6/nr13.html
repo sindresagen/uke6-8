@@ -1,0 +1,72 @@
+﻿﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <p>Endre på tekstene! (Prøv også å fylle ut tall: 11, 101, 102)</p>
+    <input type="text" id="txt1" oninput="findFirst()" value="Per" /><br />
+    <input type="text" id="txt2" oninput="findFirst()" value="Pål" /><br />
+    <input type="text" id="txt3" oninput="findFirst()" value="Espen" /><br />
+    <script>
+        updateView();
+        let txt1;
+        let txt2;
+        let txt3;
+        let compareTxt1;
+        let compareTxt2;
+        let compareTxt3;
+        let alfabet;
+
+        function updateView() {
+            document.getElementById('app').innerHTML = `
+            <input type="text" oninput="txt1 = this.value" value="${txt1 ? txt1 : ''}" /><br/>
+            <input type="text" oninput="txt2 = this.value" value="${txt2 ? txt2 : ''}" /><br/>
+            <input type="text" oninput="txt3 = this.value" value="${txt3 ? txt3 : ''}" /><br/>
+            <button onclick="checkInput(); updateView();">Sjekk</button>
+            <div>${compareTxt1 ? compareTxt1 : ''}</div>
+            <div>${compareTxt2 ? compareTxt2 : ''}</div>
+            <div>${compareTxt3 ? compareTxt3 : ''}</div>
+            <div>Den som er numerisk/alfabetisk lavest verdi:${alfabet ? alfabet : ''}</div>
+            `;
+        }
+
+        function checkInput() {
+            updateView();
+            if (txt1 != txt2) {
+                compareTxt1 = '<del>Tekst 1 og 2 er ikke like</del><br/>';
+            } else {
+                compareTxt1 = 'Tekst 1 og 2 er like<br/>';
+            }
+            if (txt1 != txt3) {
+                compareTxt2 = '<del>Tekst 1 og 3 er ikke like</del><br/>';
+            } else {
+                compareTxt2 = 'Tekst 1 og 3 er like<br/>';
+            }
+            if (txt2 != txt3) {
+                compareTxt3 = '<del>Tekst 2 og 3 er ikke like</del><br/>';
+            } else{
+                compareTxt3 = 'Tekst 2 og 3 er like<br/>';
+            }
+
+            if (txt1 <= txt2) {
+                if (txt3 <= txt1) {
+                    alfabet = txt3;
+                } else {
+                    alfabet = txt1;
+                }
+            } else {
+                if (txt3 <= txt2) {
+                    alfabet = txt3;
+                } else {
+                    alfabet = txt2;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
