@@ -13,26 +13,48 @@ const alphabetArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
 let inputArray = [];
 let txtToMorse = '';
 // let txtToArray;
-let outputContent;
-
+let alphabet = true;
 
 
 // controller
+
 function txtToArray(input) {
-    txtToMorse = '';
-    var toUpperCase = input.value.toUpperCase();
-    console.log(toUpperCase);
-    inputArray = toUpperCase.split('');
-    console.log(inputArray);
-    for (let i = 0; i < inputArray.length; i++)
-    for (let j = 0; j < alphabetArray.length; j++) {
+    if (alphabet === true) {
+        txtToMorse = '';
+        var toUpperCase = input.value.toUpperCase();
+        inputArray = toUpperCase.split('');
+        for (let i = 0; i < inputArray.length; i++)
+        for (let j = 0; j < alphabetArray.length; j++) {
         if (inputArray[i] === alphabetArray[j]) {
+            console.log(j);
             txtToMorse += morseCodeArray[j];
             txtToMorse += ' ';
 
+            }
+        }
+    }
+    if (alphabet === false) {
+        txtToMorse = '';
+        var toUpperCase = input.value.toUpperCase();
+        inputArray = toUpperCase.split(' ');
+        for (let i = 0; i < inputArray.length; i++)
+        for (let j = 0; j < morseCodeArray.length; j++) {
+            if (inputArray[i] === morseCodeArray[j]) {
+                txtToMorse += alphabetArray[j];
+                
+
+            }
         }
     }
     updateView();
+}
+    
+   
+
+
+function changeAlphabet(){
+    alphabet = alphabet ? false : true; 
+    console.log(alphabet)
 }
 
 

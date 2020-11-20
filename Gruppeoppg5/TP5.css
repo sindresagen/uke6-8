@@ -7,12 +7,33 @@
    
 }
 
+#knapp, #hvilken {
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -700%);
+    position: absolute;
+    color: white;
+    font-size: 20px;
+
+}
+
+#knapp:focus {
+        outline: rgba(123, 134, 61, 0.808) auto 5px; 
+}
+#knapp:active {
+    outline: blue auto 5px; 
+}
+
 body {
-    background-image: url("https://imgur.com/StRreA1.jpg");
+    background-color: rgba(76, 90, 88, 0.87);
+    background-image: url("https://images.hdqwalls.com/wallpapers/texture-icons-minimalism-digital-art-y5.jpg");
+    object-fit: cover;
+
 }
 
 .output{
-    background-color: antiquewhite;
+    background-color: rgba(250, 235, 215, 0.527);
     width: auto;
     margin: auto;
     border: solid black 2px;
@@ -46,6 +67,7 @@ div:empty {
     width: 100%;
     padding: 10px 20px;
     margin: auto;
+    color: white;
 }
 
 #under {
@@ -58,16 +80,17 @@ div:empty {
     border-right: 5px solid rgb(96, 136, 167);
     border-bottom: 5px solid rgb(96, 136, 167);
     border-radius: 7px;
-    background: rgba(120,120,120, .2);
+    background-image: url("https://imgur.com/StRreA1.jpg");
+    background-position: center;
     font-size: 30px;
     padding: 10px 10px;
 }
 
 h1 {
-    color: black;
+    color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: 2px 5px 5px rgb(96, 136, 167);
-        
-    
 }
 
+* {
+    font-family: 'Noto Sans JP', sans-serif;
+}

@@ -4,11 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Morse Code Generator</title>
     <link rel="stylesheet" href="TP5.css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="TP5.js"></script>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 
 </head>
 
@@ -23,18 +31,20 @@
         function updateView() {
             document.getElementById('app').innerHTML = `
             <div id="overskrift">
-            <h1>Morse Code Generator</h1></div>
+            <h1 style="font-family: 'Noto Sans JP', sans-serif">Morse Code Generator</h1></div>
             <div class="input">
-            <form class="w3-container">
-            <input id="tekstInput" type="text" class="w3-input w3-border w3-animate-input" style="width:30%" placeholder="Skriv noe her" onkeydown="if (event.code === 'Enter') txtToArray(this);"></div>
+            <form id="tekstInput">
+            <input id="tekstInput" type="text" style="width:30%; font-weight: bold; text-color: white" placeholder="Skriv noe her" onkeydown="if (event.code === 'Enter') txtToArray(this);"></div>
             </form>
             <br>
+            <button id="knapp" class="btn waves-effect waves-light knapp1" type="submit" name="action" onclick="changeAlphabet(); updateView()" style="background-color: #7cb342";>Skift oversettelse
+            <i class="material-icons right">autorenew</i>
+            </button>
+            <div id="hvilken" style="text-color: white">${alphabet ? 'Alfabet' : 'Morse'}</div>
             <div id="under">
             <div class="output">${txtToMorse || ''}</div>
             <div class="controller"></div>
             </div>
-            
-            
             `;
 
         }
