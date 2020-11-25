@@ -1,0 +1,23 @@
+TP6 kladd ish
+
+
+Attack randomized: Spiller har 3 angrep, Execute kan bare brukes under 20 % hp. 
+^50% sjanse for de 2 andre angrepene over 20%hp. Execute= død ( 0hp )
+
+Crit chance( atck x2 dmg.)  10% hp normal hit, 20% hp crit hit.
+
+Miss chance npc= 30% ?
+
+Boss har 150hp, spiller har 100hp
+
+Hit check: Lyd på når man hitter, "bomme-lyd" når man misser.
+
+Combat log : "Player critical hits boss for 20 dmg". "Boss hits player for 10 hp "
+Boss misses the attack"
+
+Changeable player name: 2 forskjellige characters og da navn: Firelord og Witch420 Etc
+victory screen: Lyd for vinner og sjekk av boss eller spiller som vant. 
+
+Npc change appearance after each 25% hp loss: Endrer bilde / animasjon hvert 25% hp 
+
+forskjellige attacks? 

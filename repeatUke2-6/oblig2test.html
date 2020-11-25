@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Test Suite</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.12.0.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.12.0.js"></script>
+    <script src="oblig2.js"></script>
+    <script>
+        // model
+        let numbers;
+        let chosenBar;
+        let inputValue;
+
+        show();
+        function show(){
+
+        }
+
+        QUnit.test('velge stolpe, valgt stolpe', function (assert) {
+            selectedBar(1);
+            let actual = chosenBar;
+            let expected = 1;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test('velge stolpe, annen stolpe', function (assert) {
+            selectedBar(1);
+            selectedBar(2);
+            let actual = chosenBar;
+            let expected = 2;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test('slette en stolpe', function (assert) {
+            numbers = [3, 4, 2];
+            chosenBar = 2;
+            removeBar();
+            let actual = numbers;
+            let expected = [3, 2];
+            assert.deepEqual(actual, expected);
+        });
+
+        QUnit.test('endre en stolpe', function (assert) {
+            numbers = [4, 1, 2];
+            chosenBar = 1;
+            inputValue = 8;
+            changeBar();
+            let actual = numbers;
+            let expected = [8, 1, 2];
+            assert.deepEqual(actual, expected);
+        });
+
+        QUnit.test('legge til en stolpe', function (assert) {
+            numbers = [3, 6, 1];
+            inputValue = 6;
+            addBar(inputValue);
+            let actual = numbers;
+            let expected = [3, 6, 1, 6];
+            assert.deepEqual(actual, expected);
+        });
+    </script>
+</body>
+
+</html>
