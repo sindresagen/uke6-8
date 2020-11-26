@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://media.discordapp.net/attachments/763413740540002346/781139871343050752/Bilde_2020-11-25_135033_2x.png?width=1442&height=656");
+    background-image: url("https://media.discordapp.net/attachments/763413740540002346/781521581842890772/spillbaneUtenWS.png");
     background-size: cover;
     background-repeat: none;
 }
@@ -17,40 +17,43 @@ body {
 }
 
 #healthbar {
-    position: relative;
-    left: 340px;
-    top: -35px;
+    position: fixed;
+    right: 73%;
+    top: 45vh;
 }
 
 #healthbarboss {
-    position: relative;
-    left: 79%;
-    top: -10vh;
+    position: fixed;
+    left: 81%;
+    top: 45vh;
 }
 
 #karakter {
-    position: relative;
-    left: 19%;
-    top: 32vh;
+    position: fixed;
+    left: 18%;
+    top: 57.7vh;
 }
 #boss {
-    position: relative;
-    right: -78%;
-    top: 16.7vh;
+    position: fixed;
+    right: 3%;
+    top: 50vh;
+    height: 400px;
+    width: 400px;
+
 }
 
 #combatlog {
     font-size: 20px;
     border: 5px solid black;   
     width: 300px;
-    padding: 80px;
+    padding: 20px;
     margin: 40px;
     background-color: whitesmoke;
     opacity: 75%;
     position: absolute;
     bottom: 0;
     right: 0;
-    height: 100px;
+    height: 190px;
     top: 40px;
 }
 
@@ -59,4 +62,17 @@ body {
     bottom: 100px;
     right: 45.6%;
     cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+#atkBtn:active {
+    transform: translateY(6px);
+    opacity: 0.5;
+}
+
+.death {
+    transform: translateY(15rem) rotateZ(45deg);
+    transition: all 1.5s ease;
+    opacity: 0;
 }

@@ -23,6 +23,14 @@
 
     <script>
         //model 
+
+        //model
+        var winningScreen = '';
+        var attackState = true;
+        var combatLog = '';
+        var playerHealth = 100;
+        var bossHealth = 100;
+        var healthStateIndex = 0;
         var playerStateArray = ['https://cdn.discordapp.com/attachments/763413740540002346/781146919439040543/100.png', 
                                 'https://cdn.discordapp.com/attachments/763413740540002346/781146916724670484/75.png', 
                                 'https://cdn.discordapp.com/attachments/763413740540002346/781146914522660874/50.png', 
@@ -36,23 +44,26 @@
         let html = '';
         drawGame();
         function drawGame() {
-            html += `
+            html = `
+            <div>${winningScreen || ''}</div>
             <div id="overskrift">Strit faiter 69</div>
-            <div id="karakter"><img src="https://cdn.discordapp.com/attachments/763413740540002346/781146919439040543/100.png" style="height: 150px; width 70px;"/></div>
-            <div id="boss"><img src="https://cdn.discordapp.com/attachments/763413740540002346/781150482130665503/boss.png" style="height: 150px; width 70px;"/></div>
-            <div id="healthbar" class="w3-light-grey" style="width:200px;">
-                <div class="w3-red" style="height:24px;width:100%"><div id="healthtext">HEALTH</div></div>
+            <div id="karakter"><img src="${playerStateArray[healthStateIndex]}" style="height: 150px; width 70px;"/></div>
+            <div id="boss""><img src="https://cdn.discordapp.com/attachments/763413740540002346/781150482130665503/boss.png" style="height: 350px; width 70px;"/></div>
+            <div id="healthbar" class="w3-red" style="width:200px;">
+                <div class="w3-green" style="height:24px;width:${playerHealth}%"><div id="healthtext">${playerHealth}</div></div>
             </div><br>
-            <div id="healthbarboss" class="w3-light-grey" style="width:200px;">
-                <div class="w3-red" style="height:24px;width:100%"><div id="healthtext">HEALTH</div></div>
+            <div id="healthbarboss" class="w3-red" style="width:200px;">
+                <div class="w3-green" style="height:24px;width:${bossHealth}%"><div id="healthtext">${bossHealth}</div></div>
             </div><br>
 
-            <div id="combatlog"></div>
-            <div id="atkBtn" onclick="attack"><img src="https://cdn.discordapp.com/attachments/763413740540002346/781143343995551754/atkBtn1.jpg" style="height: 75px; width 70px;"/></div>
+            <div id="combatlog">${combatLog || ''}</div>
+            <button id="atkBtn" onclick="attack()" style="padding:0; width:auto; height:auto;"><img src="https://cdn.discordapp.com/attachments/763413740540002346/781143343995551754/atkBtn1.jpg" style="height: 75px; width 70px;"/></button>
             
-            `
+            `;
+            gameDiv.innerHTML = html;
         }
-        gameDiv.innerHTML = html;
+        
+        
     </script>
 
     
