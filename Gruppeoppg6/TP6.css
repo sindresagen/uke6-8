@@ -1,9 +1,62 @@
-bot robin blyattzsc
+body {
+    background-image: url("https://media.discordapp.net/attachments/763413740540002346/781139871343050752/Bilde_2020-11-25_135033_2x.png?width=1442&height=656");
+    background-size: cover;
+    background-repeat: none;
+}
 
-cyka cyka cyka blyat
+#overskrift {
+    align-content: center;
+    text-align: center;
+    margin-top: 10vh;
+    font-size: 50px;
+    font-family: "Monsterrat", sans-serif;
+}
 
-cyka blyat
+#healthtext {
+    color: black;
+}
 
-blyat === blyant
+#healthbar {
+    position: relative;
+    left: 340px;
+    top: -35px;
+}
 
-🌆 ?
+#healthbarboss {
+    position: relative;
+    left: 79%;
+    top: -10vh;
+}
+
+#karakter {
+    position: relative;
+    left: 19%;
+    top: 32vh;
+}
+#boss {
+    position: relative;
+    right: -78%;
+    top: 16.7vh;
+}
+
+#combatlog {
+    font-size: 20px;
+    border: 5px solid black;   
+    width: 300px;
+    padding: 80px;
+    margin: 40px;
+    background-color: whitesmoke;
+    opacity: 75%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100px;
+    top: 40px;
+}
+
+#atkBtn {
+    position: fixed;
+    bottom: 100px;
+    right: 45.6%;
+    cursor: pointer;
+}

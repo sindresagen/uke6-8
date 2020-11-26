@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            height: 100px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="getQuote()">Get quote</button>
+    <div id="app"></div>
+    <script>
+
+        let appDiv = document.getElementById('app');
+        let quote = '';
+
+        const arrayOfQuotes = [
+            {author: 'Jim Rohn', quote: 'Beware of what you become in pursuit of what you want.'},
+            {author: 'Epictetus', quote: "It's not what happens to you, but how you react to it that matters."},
+            {author: 'Frank Sinatra', quote: 'The best revenge is massive success.'},
+            {author: 'Wayne Gretzy', quote: "You miss 100% of the shots you don't make."},
+            {author: 'Nelson Mandela', quote: 'Resentment is like drinking poison and waiting for your enemies to die.'},
+            {author: 'Elbert Hubbard', quote: 'Do not take life too seriously. You will not get out alive'}
+        ];
+
+        updateView();
+        function updateView() {
+            let html = '';
+            html = `Author: ${quote.author || ''} <br/> Quote: ${quote.quote || ''}`;
+
+            appDiv.innerHTML = html;
+        }
+
+        function randomQuote() {
+            randomIndex = Math.floor(Math.random() * arrayOfQuotes.length);
+            quote = arrayOfQuotes[randomIndex];
+            updateView();
+        }
+
+        function getQuote() {
+            // quote += arrayOfQuotes[0].author;
+            // quote += arrayOfQuotes[0].quote;
+            quote += arrayOfQuotes[0];
+            updateView();
+        }
+    </script>
+</body>
+</html>

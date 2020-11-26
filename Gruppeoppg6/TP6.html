@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agony and Salvation</title>
     <script src="TP6.js"></script>
+    <link rel="stylesheet" href="TP6.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         * {
             user-select: none;
@@ -14,16 +18,39 @@
 </head>
 <body>
     <div id="app"></div>
+   
     
 
     <script>
+        //model 
+        var playerStateArray = ['https://cdn.discordapp.com/attachments/763413740540002346/781146919439040543/100.png', 
+                                'https://cdn.discordapp.com/attachments/763413740540002346/781146916724670484/75.png', 
+                                'https://cdn.discordapp.com/attachments/763413740540002346/781146914522660874/50.png', 
+                                'https://cdn.discordapp.com/attachments/763413740540002346/781146908420210728/0.png']
+
+
         let gameDiv = document.getElementById('app');
         //view
+        
 
         let html = '';
         drawGame();
         function drawGame() {
+            html += `
+            <div id="overskrift">Strit faiter 69</div>
+            <div id="karakter"><img src="https://cdn.discordapp.com/attachments/763413740540002346/781146919439040543/100.png" style="height: 150px; width 70px;"/></div>
+            <div id="boss"><img src="https://cdn.discordapp.com/attachments/763413740540002346/781150482130665503/boss.png" style="height: 150px; width 70px;"/></div>
+            <div id="healthbar" class="w3-light-grey" style="width:200px;">
+                <div class="w3-red" style="height:24px;width:100%"><div id="healthtext">HEALTH</div></div>
+            </div><br>
+            <div id="healthbarboss" class="w3-light-grey" style="width:200px;">
+                <div class="w3-red" style="height:24px;width:100%"><div id="healthtext">HEALTH</div></div>
+            </div><br>
 
+            <div id="combatlog"></div>
+            <div id="atkBtn" onclick="attack"><img src="https://cdn.discordapp.com/attachments/763413740540002346/781143343995551754/atkBtn1.jpg" style="height: 75px; width 70px;"/></div>
+            
+            `
         }
         gameDiv.innerHTML = html;
     </script>

@@ -8,7 +8,7 @@ Crit chance( atck x2 dmg.)  10% hp normal hit, 20% hp crit hit.
 
 Miss chance npc= 30% ?
 
-Boss har 150hp, spiller har 100hp
+Boss har 150    hp, spiller har 100hp
 
 Hit check: Lyd på når man hitter, "bomme-lyd" når man misser.
 
@@ -21,3 +21,24 @@ victory screen: Lyd for vinner og sjekk av boss eller spiller som vant.
 Npc change appearance after each 25% hp loss: Endrer bilde / animasjon hvert 25% hp 
 
 forskjellige attacks? 
+
+
+
+
+
+
+randomized attack = math.floor(math.random() * 100)      /// prosentvis sjanse
+
+critchance må sette til en spesifikk verdi (kanskje en variabel så er den konfigurerbar)
+
+npc roller også randomized attack verdien (kanskje en egen "hittable" som setter verdi på forskjellige verdier)
+
+combatlog logger alle "moves" til en string.
+
+byttbar spill figur kan løses med  en posisjon i ett objekt som har spillkarakterer med verdier og angrep.	
+
+endre spillers navn kan enkelt bare være en variabel.
+
+check winner skjekker om hp verdiene er blitt 0, skjekker etter hvert angrep fra begge parter.
+
+if setning med HP som endrer bilde på npc og spill karakter.
