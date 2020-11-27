@@ -1,20 +1,19 @@
 
+function playAudio() {
+    var audio = new Audio('2020-11-26-15-22-18.mp3');
+    audio.volume = 0.1;
+    audio.play();
+}
 
-
+function randomNumberGenerator() {
+    randomNumber = Math.floor(Math.random() * 100);
+}
 
 function attack() {
-    if (playerHealth === 0) {
-        karakter.classList.add('death');
-        return;
-    };
-    if (bossHealth == 0) {
-        boss.classList.add('death');
-        return;
-    };
+    if (gameFinished === true) return;
     if (attackState === false) return;
-    var Damage = 5;
-    var randomNumber = Math.floor(Math.random() * 100);
     if (attackState === true) {
+        randomNumberGenerator();
         if (randomNumber > 0 && randomNumber <= 75) {
             bossHealth -= Damage;
             console.log('attack');
@@ -29,8 +28,14 @@ function attack() {
             console.log('crit');
         }
         attackState = false;
-    }
 
+        drawGame();
+        bossAttack();
+    }
+}
+
+function bossAttack() {
+    randomNumberGenerator();
     setTimeout(() => {
         if (randomNumber > 0 && randomNumber <= 75) {
             playerHealth -= Damage * 2;
@@ -41,18 +46,15 @@ function attack() {
             console.log('boss miss');
 
         }
+        console.log('boss')
         attackState = true;
         drawGame();
-        return;
+        healthStatePlayer();
+        healthStateBoss();
     }, 1000)
-
-    healthState();
-    drawGame();
-
-
 }
 
-function healthState() {
+function healthStatePlayer() {
     if (playerHealth > 75) {
         healthStateIndex = 0;
     } else if (playerHealth > 50) {
@@ -61,15 +63,28 @@ function healthState() {
         healthStateIndex = 2;
     } else if (playerHealth > 0 && playerHealth < 25) {
         healthStateIndex = 3;
-    } else if (playerHealth == 0) {
-        
-        victoryScreen('boss');
+    } else if (playerHealth == 0) {  
+        setTimeout(function(){ checkDeathPlayer(); }, 100);
+        setTimeout(function(){ win('boss'); }, 1500);
     }
-    drawGame();
+}
+function healthStateBoss() {
+        if (bossHealth === 0) {
+            setTimeout(function(){ checkDeathBoss(); }, 100);
+            setTimeout(function(){ win('player'); }, 1500);
+        }
+        
+    }
+
+
+function checkDeathPlayer() {
+        karakter.classList.add('death');
+        gameFinished = true;
+}
+function checkDeathBoss () {
+        boss.classList.add('death');
+        gameFinished = true;
 }
 
-function victoryScreen (winner) {
-    if (winner == 'boss') {
-        
-    }
-}
+
+
