@@ -69,7 +69,15 @@ function healthStatePlayer() {
     }
 }
 function healthStateBoss() {
-        if (bossHealth === 0) {
+        if (bossHealth > 75) {
+            healthStateIndex = 0;
+        } else if (bossHealth > 50) {
+            healthStateIndex = 1;
+        } else if (bossHealth > 25) {
+            healthStateIndex = 2;
+        } else if (bossHealth > 0 && bossHealth < 25) {
+            healthStateIndex = 3;
+        } else if (bossHealth === 0) {
             setTimeout(function(){ checkDeathBoss(); }, 100);
             setTimeout(function(){ win('player'); }, 1500);
         }
