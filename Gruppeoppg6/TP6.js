@@ -1,4 +1,3 @@
-
 function playAudio() {
     var audio = new Audio('2020-11-26-15-22-18.mp3');
     audio.volume = 0.1;
@@ -14,11 +13,11 @@ function attack() {
     if (attackState === false) return;
     if (attackState === true) {
         randomNumberGenerator();
-        if (randomNumber > 0 && randomNumber <= 75) {
+        if (randomNumber > 0 && randomNumber <= 65) {
             bossHealth -= Damage;
             console.log('attack');
             combatLog = 'Player hits for 5 dmg.</br>';
-        } else if (randomNumber > 75 && randomNumber <= 100) {
+        } else if (randomNumber > 65 && randomNumber <= 100) {
             if (bossHealth === 5) {
                 bossHealth = 0
             } else {
@@ -63,36 +62,33 @@ function healthStatePlayer() {
         healthStateIndex = 2;
     } else if (playerHealth > 0 && playerHealth < 25) {
         healthStateIndex = 3;
-    } else if (playerHealth == 0) {  
-        setTimeout(function(){ checkDeathPlayer(); }, 100);
-        setTimeout(function(){ win('boss'); }, 1500);
+    } else if (playerHealth == 0) {
+        setTimeout(function () { checkDeathPlayer(); }, 100);
+        setTimeout(function () { win('boss'); }, 1500);
     }
 }
 function healthStateBoss() {
-        if (bossHealth > 75) {
-            healthStateIndex = 0;
-        } else if (bossHealth > 50) {
-            healthStateIndex = 1;
-        } else if (bossHealth > 25) {
-            healthStateIndex = 2;
-        } else if (bossHealth > 0 && bossHealth < 25) {
-            healthStateIndex = 3;
-        } else if (bossHealth === 0) {
-            setTimeout(function(){ checkDeathBoss(); }, 100);
-            setTimeout(function(){ win('player'); }, 1500);
-        }
-        
+    if (bossHealth > 75) {
+        healthStateIndexBoss = 0;
+    } else if (bossHealth > 50) {
+        healthStateIndexBoss = 1;
+    } else if (bossHealth > 25) {
+        healthStateIndexBoss = 2;
+    } else if (bossHealth > 0 && bossHealth < 25) {
+        healthStateIndexBoss = 3;
+    } else if (bossHealth === 0) {
+        setTimeout(function () { checkDeathBoss(); }, 100);
+        setTimeout(function () { win('player'); }, 1500);
     }
+
+}
 
 
 function checkDeathPlayer() {
-        karakter.classList.add('death');
-        gameFinished = true;
+    karakter.classList.add('death');
+    gameFinished = true;
 }
-function checkDeathBoss () {
-        boss.classList.add('death');
-        gameFinished = true;
+function checkDeathBoss() {
+    boss.classList.add('death');
+    gameFinished = true;
 }
-
-
-
