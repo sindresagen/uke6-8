@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .litWick {
+            margin-top: 30px;
+            margin-left: 40px;
+            padding: 1px;
+            left: 180px;
+            background-color: darkorange;
+            height: 8px;
+            width: 3px;
+            position: relative;
+            float: left;
+        }
+
+        .unLit {
+            background-color: purple;
+            margin-top: 40px;
+            margin-left: 20px;
+            height: 100px;
+            width: 30px;
+            float: left;
+        }
+
+        .wick {
+            margin-top: 30px;
+            margin-left: 40px;
+            padding: 1px;
+            left: 180px;
+            background-color: black;
+            height: 8px;
+            width: 3px;
+            position: relative;
+            float: left;
+        }
+
+        .candleHolder {
+            background-color: red;
+            width: 150px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        let lights = [
+            {lit: false},
+            {lit: false},
+            {lit: false},
+            {lit: false},
+        ];
+        
+
+        show();
+        function show() {
+            let html = '';
+            let candleHolder = '';
+            let wick = '';
+            for (let light in lights) {
+                let wickIsLit = lights[light].lite = true ? 'wick' : 'litWick';
+                wick += `<div class="${wickIsLit}"></div>`;
+                html += `<div class="unLit" onclick="litTheLight(${light})"></div>`;
+            }
+            candleHolder = '<div class="candleHolder"></div>';
+            
+            document.getElementById("app").innerHTML = wick + html;
+        }
+
+        function litTheLight(light) {
+            lights[light].lit = !lights[light].lit;
+            console.log(lights);
+            show();
+        }
+    </script>
+</body>
+</html>
